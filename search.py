@@ -1,6 +1,7 @@
 # Import the Pinecone library
 from dotenv import load_dotenv
-from pinecone import Pinecone, ServerlessSpec
+from pinecone import Pinecone
+from config import INDEX_NAME
 
 from os import getenv
 load_dotenv()
@@ -10,11 +11,11 @@ PINECONE_API_KEY = getenv("PINECONE_API_KEY")
 # Initialize a Pinecone client with your API key
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-index = pc.Index("example-index")
+index = pc.Index(INDEX_NAME)
 
 
 # Define your query
-query = "Tell me about the tech company known as Apple."
+query = "Tell me what to wear for casual occasions"
 
 # Convert the query into a numerical vector that Pinecone can search with
 query_embedding = pc.inference.embed(
