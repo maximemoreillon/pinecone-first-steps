@@ -15,7 +15,7 @@ index = pc.Index(INDEX_NAME)
 
 
 # Define your query
-query = "Tell me what to wear for casual occasions"
+query = "Tell me what to wear for a formal event"
 
 # Convert the query into a numerical vector that Pinecone can search with
 query_embedding = pc.inference.embed(
